@@ -1,8 +1,3 @@
-HTML Footer with Color Customization
-
-Here's a complete HTML file with a styled footer and color customization options:
-
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -124,12 +119,18 @@ Here's a complete HTML file with a styled footer and color customization options
             margin-left: 15px;
         }
         
+        /* Define CSS variables for the footer */
         footer {
-            background-color: #1a1a1a;
-            color: white;
+            --footer-bg: #1a1a1a;
+            --footer-text: #ffffff;
+            --footer-accent: #00ffff;
+            --footer-link: #cccccc;
+            
+            background-color: var(--footer-bg);
+            color: var(--footer-text);
             padding: 40px 20px;
             margin-top: 40px;
-            border-top: 4px solid #0ff;
+            border-top: 4px solid var(--footer-accent);
             box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.1);
         }
         
@@ -153,6 +154,7 @@ Here's a complete HTML file with a styled footer and color customization options
             margin-bottom: 20px;
             position: relative;
             padding-bottom: 10px;
+            color: var(--footer-text);
         }
         
         .footer-section h3::after {
@@ -162,14 +164,14 @@ Here's a complete HTML file with a styled footer and color customization options
             left: 0;
             width: 50px;
             height: 2px;
-            background: #0ff;
+            background: var(--footer-accent);
         }
         
         .footer-section p {
             font-size: 1rem;
             line-height: 1.6;
             margin-bottom: 20px;
-            color: #ccc;
+            color: var(--footer-link);
         }
         
         .footer-section ul {
@@ -181,19 +183,19 @@ Here's a complete HTML file with a styled footer and color customization options
         }
         
         .footer-section ul li a {
-            color: #ccc;
+            color: var(--footer-link);
             text-decoration: none;
             transition: color 0.3s;
             display: block;
         }
         
         .footer-section ul li a:hover {
-            color: #0ff;
+            color: var(--footer-accent);
             padding-left: 5px;
         }
         
         .contact-info {
-            color: #ccc;
+            color: var(--footer-link);
         }
         
         .contact-info div {
@@ -214,16 +216,16 @@ Here's a complete HTML file with a styled footer and color customization options
             height: 40px;
             background: rgba(255, 255, 255, 0.1);
             border-radius: 50%;
-            color: white;
+            color: var(--footer-text);
             text-align: center;
             line-height: 40px;
             transition: all 0.3s;
         }
         
         .social-links a:hover {
-            background: #0ff;
+            background: var(--footer-accent);
             transform: translateY(-3px);
-            color: #333;
+            color: var(--footer-bg);
         }
         
         .footer-bottom {
@@ -233,7 +235,7 @@ Here's a complete HTML file with a styled footer and color customization options
             padding-top: 20px;
             margin-top: 30px;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
-            color: #ccc;
+            color: var(--footer-link);
             font-size: 0.9rem;
         }
         
@@ -285,6 +287,20 @@ Here's a complete HTML file with a styled footer and color customization options
             
             .footer-section {
                 margin-bottom: 30px;
+            }
+            
+            .control-group {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+            
+            label {
+                min-width: 100%;
+            }
+            
+            input[type="range"] {
+                width: 100%;
             }
             
             h1 {
@@ -428,17 +444,3 @@ Here's a complete HTML file with a styled footer and color customization options
     </script>
 </body>
 </html>
-```
-
-How to Change Footer Colors
-
-The code includes a complete HTML footer with interactive color controls. Here's how to change the footer colors:
-
-1. Background Color: Use the color picker labeled "Background" to change the footer's background color. Use the slider to adjust opacity.
-2. Text Color: Use the "Text" color picker to change the text color in the footer.
-3. Accent Color: Use the "Accent" color picker to change the color of borders and hover effects.
-4. Link Color: Use the "Links" color picker to change the color of links in the footer.
-
-The CSS code for the footer styling is displayed in the example, showing how CSS variables are used to make the color changes.
-
-You can copy this entire code into an HTML file and open it in any modern browser to see the footer and experiment with different color combinations.
